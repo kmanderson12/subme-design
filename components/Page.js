@@ -26,7 +26,7 @@ const theme = {
   radius: {
     br1: "5px"
   },
-  bg: "linear-gradient(#2a5065cc,#2a5065cc),url(static/pattern-light.svg)"
+  bg: "linear-gradient(#2a5065cc,#2a5065cc),url(/static/pattern-light.svg)"
 };
 
 const StyledPage = styled.div`

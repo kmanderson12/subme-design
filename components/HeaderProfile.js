@@ -26,7 +26,7 @@ const HeaderProfile = props => {
   const role = "Substitute Teacher";
   return (
     <HeaderProfileContainer>
-      <Avatar avatarImg="static/me_square.png" />
+      <Avatar avatarImg="/static/me_square.png" />
       <ProfileName>{name}</ProfileName>
       <ProfileRole>{role}</ProfileRole>
     </HeaderProfileContainer>

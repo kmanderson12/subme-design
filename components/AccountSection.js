@@ -2,12 +2,9 @@ import styled from "styled-components";
 import AccountNav from "../components/AccountNav";
 import Dashboard from "../components/Dashboard";
 
-/*
-  TODO:
-  1. Better styling on menu.
-  2. More styling on Card (icon, more info)
-  3. Fix Avatar size (initially renders with no height) -> change to a fixed height div
-  4. Fix header spacing
+/* TODO: Figure out how to:
+    1. Render each account page
+    2. Dynamically add the appropriate pages
 */
 
 const AccountContainer = styled.section`
