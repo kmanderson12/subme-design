@@ -1,5 +1,9 @@
+import { useState } from "react";
 import styled from "styled-components";
 import CheckCircle from "./styles/CheckCircle";
+import MoreInfo from "./MoreInfo";
+import Details from "./CardDetails";
+import InnerDetails from "./InnerDetails";
 
 const Card = styled.div`
   background: white;
@@ -7,15 +11,20 @@ const Card = styled.div`
   box-shadow: ${props => props.theme.shadows.bs1};
   margin-top: 1em;
   margin-bottom: 1em;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  :hover {
+    box-shadow: ${props => props.theme.shadows.bs2};
+  }
 
-  .svgIcon {
-    flex: 0.25;
-    margin: 0.75rem;
-    margin-right: 1rem;
+  svg.feather-check-circle {
+    flex: 0.3;
+    margin-left: -8px;
   }
 `;
 
@@ -42,10 +51,18 @@ const RightSide = styled.div`
   }
 `;
 
+const Break = styled.div`
+  flex-basis: 100%;
+  height: 0;
+`;
+
 const ScheduleCard = props => {
+  const [showDetails, setShowDetails] = useState(false);
+  const toggle = () => setShowDetails(!showDetails);
+
   return (
-    <Card>
-      <CheckCircle className="svgIcon" />
+    <Card onClick={toggle}>
+      <CheckCircle />
       <LeftSide>
         <h4>{props.leftTitle}</h4>
         <p>{props.leftSubtitle}</p>
@@ -54,6 +71,11 @@ const ScheduleCard = props => {
         <h4>{props.rightTitle}</h4>
         <p>{props.rightSubtitle}</p>
       </RightSide>
+      <Break />
+      <MoreInfo />
+      <Details showDetails={showDetails}>
+        <InnerDetails innerDetails={props.innerDetails} />
+      </Details>
     </Card>
   );
 };

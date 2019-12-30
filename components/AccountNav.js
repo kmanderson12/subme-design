@@ -22,40 +22,31 @@ const Menu = styled.ul`
     border-bottom: 2px solid transparent;
     text-align: center;
   }
-  /* li:first-child {
-    padding-left: 0.5rem;
-  } */
   .selected {
-    color: ${props => props.theme.colors.gray900};
-  }
-  li:nth-child(2) {
     border-bottom: 2px solid ${props => props.theme.colors.blue400};
+  }
+  .selected > a {
+    color: ${props => props.theme.colors.gray900};
   }
 `;
 
 const AccountNav = () => {
   return (
     <Menu>
-      <li>
-        <Link href="/">
-          <a>Dashboard</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/account">
-          <a>Profile</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/">
-          <a>Messages</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/">
-          <a>Preferences</a>
-        </Link>
-      </li>
+      <Link href="/account">
+        <a>Dashboard</a>
+      </Link>
+
+      <Link href="/account/profile">
+        <a>Profile</a>
+      </Link>
+      <Link href="/account/messages">
+        <a>Messages</a>
+      </Link>
+
+      <Link href="/account/preferences">
+        <a>Preferences</a>
+      </Link>
     </Menu>
   );
 };

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const CircleImg = styled.img`
-  max-height: 150px;
-  max-width: 150px;
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
   border: 2px solid white;
 `;

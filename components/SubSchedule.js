@@ -19,12 +19,14 @@ const SubSchedule = () => {
         leftSubtitle="January 6th, 2020"
         rightTitle="John Smith"
         rightSubtitle="Full Day"
+        innerDetails="Just let them watch a movie, I don't care."
       />
       <ScheduleCard
         leftTitle="Tuesday"
         leftSubtitle="January 7th, 2020"
         rightTitle="Beth Williams"
         rightSubtitle="8am - 11am"
+        innerDetails="Read Chapter 9 and do the related quiz."
       />
     </>
   );

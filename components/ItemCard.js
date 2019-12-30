@@ -1,5 +1,7 @@
+import { useState } from "react";
 import styled from "styled-components";
-import ChevronDown from "./styles/ChevronDown";
+import MoreInfo from "./MoreInfo";
+import Details from "./CardDetails";
 
 const Card = styled.div`
   background: white;
@@ -13,6 +15,11 @@ const Card = styled.div`
   justify-content: center;
   text-align: center;
   flex-wrap: wrap;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  :hover {
+    box-shadow: ${props => props.theme.shadows.bs2};
+  }
 `;
 
 const Content = styled.div`
@@ -32,36 +39,21 @@ const Break = styled.div`
   height: 0;
 `;
 
-const MoreInfo = styled.div`
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  padding-top: 0.5rem;
-  justify-content: center;
-  p {
-    font-size: 11px;
-    color: ${props => props.theme.colors.gray400};
-    font-weight: 400;
-  }
-  svg {
-    color: ${props => props.theme.colors.gray400};
-    height: 18px;
-    margin-top: 2px;
-  }
-`;
-
 const ItemCard = props => {
+  const [showDetails, setShowDetails] = useState(false);
+  const toggle = () => setShowDetails(!showDetails);
+
   return (
-    <Card>
+    <Card onClick={toggle}>
       <Content>
         <h4>{props.contentHeader}</h4>
         <p>{props.contentDetails}</p>
       </Content>
       <Break />
-      <MoreInfo>
-        <p>More Info</p>
-        <ChevronDown />
-      </MoreInfo>
+      <MoreInfo />
+      <Details showDetails={showDetails}>
+        <p>Pleeeease! I need another day off.</p>
+      </Details>
     </Card>
   );
 };

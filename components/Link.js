@@ -10,5 +10,9 @@ export default ({ href, children }) => {
     className = `${className} selected`;
   }
 
-  return <Link href={href}>{React.cloneElement(children, { className })}</Link>;
+  return (
+    <li className={className}>
+      <Link href={href}>{React.cloneElement(children)}</Link>
+    </li>
+  );
 };
