@@ -1,8 +1,9 @@
 import Link from "next/link";
 import styled from "styled-components";
+import Nav from "../components/Nav";
 
 const Logo = styled.h1`
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 0 0 0 2rem;
   position: relative;
   a {
@@ -19,6 +20,7 @@ const Logo = styled.h1`
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
+  padding: 2rem;
   img {
     height: 40px;
     &:hover {
@@ -34,6 +36,7 @@ const Header = () => (
         <a>SubMe</a>
       </Link>
     </Logo>
+    <Nav />
   </StyledHeader>
 );
 
