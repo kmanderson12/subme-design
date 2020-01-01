@@ -1,13 +1,13 @@
 import HeaderProfile from "../../components/HeaderProfile";
 import AccountSection from "../../components/AccountSection";
-import Messages from "../../components/Messages";
+import Settings from "../../components/Settings";
 
 export default props => {
   return (
     <div>
       <HeaderProfile />
       <AccountSection>
-        <Messages />
+        <Settings />
       </AccountSection>
     </div>
   );

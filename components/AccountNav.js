@@ -44,8 +44,8 @@ const AccountNav = () => {
         <a>Messages</a>
       </Link>
 
-      <Link href="/account/preferences">
-        <a>Preferences</a>
+      <Link href="/account/settings">
+        <a>Settings</a>
       </Link>
     </Menu>
   );

@@ -1,5 +1,14 @@
-import Account from "../../components/Account";
+import HeaderProfile from "../../components/HeaderProfile";
+import AccountSection from "../../components/AccountSection";
+import Dashboard from "../../components/Dashboard";
 
-export default () => {
-  return <Account />;
+export default props => {
+  return (
+    <div>
+      <HeaderProfile />
+      <AccountSection>
+        <Dashboard />
+      </AccountSection>
+    </div>
+  );
 };

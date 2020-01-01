@@ -1,11 +1,14 @@
 import HeaderProfile from "../components/HeaderProfile";
 import AccountSection from "../components/AccountSection";
+import Dashboard from "../components/Dashboard";
 
 const Account = props => {
   return (
     <div>
       <HeaderProfile />
-      <AccountSection />
+      <AccountSection>
+        <Dashboard />
+      </AccountSection>
     </div>
   );
 };

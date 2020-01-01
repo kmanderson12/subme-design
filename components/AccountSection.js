@@ -25,7 +25,7 @@ const AccountSection = props => {
     <AccountContainer>
       <AccountInner>
         <AccountNav />
-        <Dashboard />
+        {props.children}
       </AccountInner>
     </AccountContainer>
   );
