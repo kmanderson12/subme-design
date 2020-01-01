@@ -75,7 +75,7 @@ const MessageCard = props => {
         <p>{props.leftSubtitle}</p>
       </Content>
       <Break />
-      <MoreInfo />
+      <MoreInfo altTag="Read More" />
       <Details showDetails={showDetails}>
         <InnerDetails innerDetails={props.innerDetails} />
       </Details>

@@ -24,11 +24,11 @@ const Details = styled.div`
   height: 100px;
 `;
 
-const MoreInfo = () => {
+const MoreInfo = props => {
   return (
     <>
       <Info>
-        <p>More Info</p>
+        {props.altTag ? <p>{props.altTag}</p> : <p>More Info</p>}
         <ChevronDown />
       </Info>
     </>
