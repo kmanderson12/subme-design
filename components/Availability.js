@@ -5,6 +5,8 @@ import BasicButton from "./styles/BasicButton";
 import { FlexCenterColumn } from "./styles/FlexCenter";
 
 // TODO: Fix this ridiculous monstrosity somehow.
+// TODO: Add some default state, raise it higher in the tree
+// TODO: Array of days of the week to render the Day component
 
 class Availability extends Component {
   state = {

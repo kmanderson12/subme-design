@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Availability from "../components/Availability";
+import AvailabilitySimple from "../components/AvailabilitySimple";
 
 const ColumnTitle = styled.h2`
   color: ${props => props.theme.colors.gray700};
@@ -41,7 +41,7 @@ const SubPreferences = () => {
       <Card>
         <h4>Send New Sub Opportunities To:</h4>
         <h4>Availability</h4>
-        <Availability />
+        <AvailabilitySimple />
       </Card>
     </>
   );

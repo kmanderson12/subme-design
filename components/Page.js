@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Header from "../components/Header";
 import Meta from "../components/Meta";
+import Banner from "../components/Banner";
 
 const theme = {
   colors: {
@@ -74,6 +75,7 @@ class Page extends Component {
         <GlobalStyle />
         <StyledPage id="page-wrap">
           <Meta />
+          <Banner />
           <Header />
           <Inner>{this.props.children}</Inner>
         </StyledPage>
