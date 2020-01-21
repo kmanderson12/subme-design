@@ -29,8 +29,9 @@ const Card = styled.div`
   color: ${props => props.theme.colors.gray700};
   text-align: left;
   min-height: 200px;
-  h4 {
-    margin-bottom: 2rem;
+
+  p {
+    margin: 2rem;
   }
 `;
 
@@ -40,6 +41,7 @@ const SubPreferences = () => {
       <ColumnTitle>Preferences</ColumnTitle>
       <Card>
         <h4>Send New Sub Opportunities To:</h4>
+        <p>(555) 867-5309</p>
         <h4>Availability</h4>
         <AvailabilitySimple />
       </Card>

@@ -40,7 +40,7 @@ const AvailabilitySimple = () => {
               name={item.day}
               available={item.available}
             >
-              {item.day}
+              {item.day.substring(0, 1)}
             </Day>
           );
         })}
@@ -80,10 +80,9 @@ export default AvailabilitySimple;
 const Day = styled.button`
   flex-grow: 1;
   border: 1px solid rgba(43, 90, 102, 0.3);
-  background: ${props => (props.available ? "#54CE68" : "#FBB8B8")};
+  background: ${props => (props.available ? "#9ade94" : "#FBB8B8")};
   opacity: ${props => (props.selectedDay === props.name ? 0.7 : 1)};
-  color: ${props =>
-    props.selectedDay === props.name ? "white" : props.theme.black};
+  color: ${props => (props.available ? props.theme.colors.gray700 : "#ad7d7d")};
   border: none;
   &:hover {
     cursor: pointer;
@@ -95,6 +94,7 @@ const ToggleSwitch = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 1rem auto;
   .toggleLabel {
     font-size: 1.25rem;
     margin: 0;
@@ -140,11 +140,11 @@ const ToggleSwitch = styled.div`
   }
 
   input:checked + .slider {
-    background-color: #54b5ce;
+    background-color: #9ade94;
   }
 
   input:focus + .slider {
-    box-shadow: 0 0 1px #54b5ce;
+    box-shadow: 0 0 1px #9ade94;
   }
 
   input:checked + .slider:before {
@@ -168,7 +168,7 @@ const DaysOfTheWeek = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  margin: 0 auto;
+  margin: 1rem auto;
   width: 100%;
   border: 2px solid rgba(43, 90, 102, 0.7);
   border-radius: 8px;
@@ -216,7 +216,7 @@ const BtnInGroup = styled.button`
   flex-grow: 1;
   border: 1px solid rgba(43, 90, 102, 0.3);
   background: ${props =>
-    props.amountStatus === props.name ? "#54b5ce" : "#ccccccb5"};
+    props.amountStatus === props.name ? "#9ade94" : "#ccccccb5"};
   color: ${props =>
     props.amountStatus === props.name ? "white" : "#393939c2"};
   border: none;
