@@ -1,10 +1,34 @@
 import { createContext, useReducer } from "react";
 
+// TODO: Global State for non-User-specific data
+
 let initialState = {
   disabled: true,
   name: "Kyle Anderson",
   email: "cookevillewebdev@gmail.com",
-  role: "Substitute Teacher"
+  role: "Substitute Teacher",
+  checked: false,
+  selectedDay: "",
+  Monday: {
+    available: false,
+    amount: ""
+  },
+  Tuesday: {
+    available: false,
+    amount: ""
+  },
+  Wednesday: {
+    available: false,
+    amount: ""
+  },
+  Thursday: {
+    available: false,
+    amount: ""
+  },
+  Friday: {
+    available: false,
+    amount: ""
+  }
 };
 const store = createContext(initialState);
 const { Provider } = store;

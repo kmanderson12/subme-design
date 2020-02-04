@@ -3,6 +3,9 @@ import styled from "styled-components";
 import BasicButton from "./styles/BasicButton";
 import { FlexCenterColumn } from "./styles/FlexCenter";
 
+// TODO: Move state to context
+// TODO: Cleanup and move styled components to different file
+
 const initialState = [
   { day: "Monday", available: true, amount: "" },
   { day: "Tuesday", available: false, amount: "" },

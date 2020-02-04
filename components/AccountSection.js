@@ -2,11 +2,6 @@ import styled from "styled-components";
 import AccountNav from "../components/AccountNav";
 import Dashboard from "../components/Dashboard";
 
-/* TODO: Figure out how to:
-    1. Render each account page
-    2. Dynamically add the appropriate pages
-*/
-
 const AccountContainer = styled.section`
   width: 100%;
   min-height: 600px;
