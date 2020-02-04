@@ -19,7 +19,7 @@ const IconButton = styled.button`
   }
   svg {
     height: 14px;
-    stroke-width: 3;
+    strokewidth: 3;
   }
 `;
 

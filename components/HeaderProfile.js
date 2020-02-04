@@ -1,5 +1,20 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { store } from "../components/context/UserProvider";
 import Avatar from "../components/Avatar";
+
+const HeaderProfile = props => {
+  const globalState = useContext(store);
+  const { name, role } = globalState.state;
+  return (
+    <HeaderProfileContainer>
+      <Avatar avatarImg="/static/me_square.png" />
+      <ProfileName>{name}</ProfileName>
+      <ProfileRole>{role}</ProfileRole>
+    </HeaderProfileContainer>
+  );
+};
+export default HeaderProfile;
 
 const HeaderProfileContainer = styled.div`
   max-width: 500px;
@@ -20,16 +35,3 @@ const ProfileRole = styled.h3`
   margin: 0;
   font-weight: 400;
 `;
-
-const HeaderProfile = props => {
-  const name = "Kyle Anderson";
-  const role = "Substitute Teacher";
-  return (
-    <HeaderProfileContainer>
-      <Avatar avatarImg="/static/me_square.png" />
-      <ProfileName>{name}</ProfileName>
-      <ProfileRole>{role}</ProfileRole>
-    </HeaderProfileContainer>
-  );
-};
-export default HeaderProfile;

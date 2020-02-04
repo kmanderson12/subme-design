@@ -47,16 +47,17 @@ const AvailabilitySimple = () => {
       </DaysOfTheWeek>
       <p>{data[currentDay].day}</p>
       <ToggleSwitch currentDayStatus={data[0].available}>
-        <label class="switch">
+        <label className="switch">
           <input
             id="avail"
             type="checkbox"
             onClick={setDay(currentDay)}
+            onChange={setDay(currentDay)}
             checked={data[currentDay].available}
             name={data[currentDay].day}
             value={!data[currentDay].available}
           />
-          <span class="slider round"></span>
+          <span className="slider round"></span>
         </label>
         {data[currentDay].available ? (
           <p className="toggleLabel">Available</p>

@@ -1,10 +1,82 @@
+import { useState, useContext } from "react";
 import styled from "styled-components";
+import { store } from "../components/context/UserProvider";
 import Form from "../components/styles/Form";
 import FlexCenter, { FlexCenterColumn } from "../components/styles/FlexCenter";
 import Avatar from "../components/Avatar";
 import IconButton from "../components/styles/IconButton";
 import UploadIcon from "../components/styles/UploadIcon";
 import BasicButton from "../components/styles/BasicButton";
+
+const BasicInfo = () => {
+  const globalState = useContext(store);
+  const { dispatch } = globalState;
+  const { name, email, disabled } = globalState.state;
+  const handleEdit = e => {
+    e.preventDefault();
+    dispatch({ type: "EDIT" });
+  };
+  const handleChange = e => {
+    const { name, value } = e.target;
+    dispatch({ type: "HANDLE_CHANGE", name, value });
+  };
+  const handleCancel = e => {
+    e.preventDefault();
+    dispatch({ type: "CANCEL" });
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch({ type: "SUBMIT", payload: e.target });
+  };
+  return (
+    <>
+      <ColumnTitle>Basic Info</ColumnTitle>
+      <Card>
+        <Form onSubmit={handleSubmit}>
+          <FlexCenterColumn>
+            <Avatar avatarImg="/static/me_square.png" />
+            <IconButton>
+              <UploadIcon />
+              Upload Image
+            </IconButton>
+          </FlexCenterColumn>
+          <label htmlFor="name">Full Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="First Name"
+            value={name}
+            onChange={handleChange}
+            disabled={disabled}
+          />
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            value={email}
+            onChange={handleChange}
+            disabled={disabled}
+          />
+          <FlexCenter>
+            {disabled ? (
+              <UpdateButton onClick={handleEdit}>Edit</UpdateButton>
+            ) : (
+              <>
+                <CancelButton onClick={handleCancel}>Cancel</CancelButton>
+                <UpdateButton type="submit">Update</UpdateButton>
+              </>
+            )}
+          </FlexCenter>
+        </Form>
+      </Card>
+    </>
+  );
+};
+
+export default BasicInfo;
 
 const ColumnTitle = styled.h2`
   color: ${props => props.theme.colors.gray700};
@@ -57,45 +129,3 @@ const CancelButton = styled(BasicButton)`
     background: ${props => props.theme.colors.gray200};
   }
 `;
-
-const BasicInfo = () => {
-  const options = ["one", "2", "tres"];
-  return (
-    <>
-      <ColumnTitle>Basic Info</ColumnTitle>
-      <Card>
-        <Form>
-          <FlexCenterColumn>
-            <Avatar avatarImg="/static/me_square.png" />
-            <IconButton>
-              <UploadIcon />
-              Upload Image
-            </IconButton>
-          </FlexCenterColumn>
-          <label htmlFor="firstName">First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="First Name"
-          />
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            placeholder="Last Name"
-          />
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="Email" />
-          <FlexCenter>
-            <CancelButton>Cancel</CancelButton>
-            <UpdateButton>Update</UpdateButton>
-          </FlexCenter>
-        </Form>
-      </Card>
-    </>
-  );
-};
-
-export default BasicInfo;
