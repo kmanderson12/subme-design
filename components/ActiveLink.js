@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default ({ href, children }) => {
+const ActiveLink = ({ href, children }) => {
   const router = useRouter();
 
   let className = children.props.className || "";
@@ -12,7 +12,11 @@ export default ({ href, children }) => {
 
   return (
     <li className={className}>
-      <Link href={href}>{React.cloneElement(children)}</Link>
+      <Link href={href} scroll={false}>
+        {React.cloneElement(children)}
+      </Link>
     </li>
   );
 };
+
+export default ActiveLink;

@@ -1,4 +1,4 @@
-import Link from "../components/Link";
+import ActiveLink from "../components/ActiveLink";
 import styled from "styled-components";
 
 const Menu = styled.ul`
@@ -33,20 +33,20 @@ const Menu = styled.ul`
 const AccountNav = () => {
   return (
     <Menu>
-      <Link href="/account">
+      <ActiveLink href="/account">
         <a>Dashboard</a>
-      </Link>
+      </ActiveLink>
 
-      <Link href="/account/profile">
+      <ActiveLink href="/account/profile">
         <a>Profile</a>
-      </Link>
-      <Link href="/account/messages">
+      </ActiveLink>
+      <ActiveLink href="/account/messages">
         <a>Messages</a>
-      </Link>
+      </ActiveLink>
 
-      <Link href="/account/settings">
+      <ActiveLink href="/account/settings">
         <a>Settings</a>
-      </Link>
+      </ActiveLink>
     </Menu>
   );
 };

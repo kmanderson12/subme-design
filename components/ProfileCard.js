@@ -8,6 +8,8 @@ import IconButton from "../components/styles/IconButton";
 import UploadIcon from "../components/styles/UploadIcon";
 import BasicButton from "../components/styles/BasicButton";
 
+// TODO: Add Cloudinary image upload/update
+
 const BasicInfo = () => {
   const globalState = useContext(store);
   const { dispatch } = globalState;
